@@ -42,24 +42,18 @@ html {
   background-position: center;
   min-height: 275px;
   max-height: 275px;
-/*  min-width: 49%;
-  max-width: 49%;
-  margin-right: 1%;*/
 }
 
 .bio {
   min-height: 70px;
   max-height: 70px;
-/*  min-width: 49%;
-  max-width: 49%;
-  margin-right: 1%;*/
 }
 
 .bio-section {
-/*  float: left;
-  clear: left;*/
-/*  min-width: 50%;
-  max-width: 50%;*/
+  display: inline-block;
+  float: left;
+  min-width: 49%;
+  max-width: 49%;
 }
 
 #tim_mckay {
