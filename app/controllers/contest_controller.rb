@@ -15,8 +15,8 @@ class ContestController < ApplicationController
   end
 
   def gallery
-    @photos = Dir['app/assets/images/2016/*'].map do |file_name|
-      "2016/"+file_name.split('/')[-1]
+    @photos = Dir['app/assets/images/'+params[:year]+'/*'].map do |file_name|
+      params[:year]+"/"+file_name.split('/')[-1]
     end
   end
 end
