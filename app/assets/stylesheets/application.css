@@ -35,6 +35,10 @@ html {
   display: inline-block;
 }
 
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
 /*///// PHOTOS ////*/
 
 .pic {
@@ -56,51 +60,51 @@ html {
 }
 
 #tim_mckay {
-  background-image: url('TimMcKay.jpg');
+  background-image: url('2016_bio_pics/TimMcKay.jpg');
 }
 
 #marianne_mckay {
-  background-image: url('MarianneMcKay.jpg');
+  background-image: url('2016_bio_pics/MarianneMcKay.jpg');
 }
 
 #ryan_mckay {
-  background-image: url('RyanMcKay.jpg');
+  background-image: url('2016_bio_pics/RyanMcKay.jpg');
 }
 
 #adam_mckay {
-  background-image: url('AdamMcKay.jpg');
+  background-image: url('2016_bio_pics/AdamMcKay.jpg');
 }
 
 #barb_grace {
-  background-image: url('BarbGrace.jpg');
+  background-image: url('2016_bio_pics/BarbGrace.jpg');
 }
 
 #jd_grace {
-  background-image: url('JDGrace.jpg');
+  background-image: url('2016_bio_pics/JDGrace.jpg');
 }
 
 #evelyn_mckay {
-  background-image: url('EvelynMcKay.jpg');
+  background-image: url('2016_bio_pics/EvelynMcKay.jpg');
 }
 
 #greg_davis {
-  background-image: url('GregDavis.jpg');
+  background-image: url('2016_bio_pics/GregDavis.jpg');
 }
 
 #jeff_mortensen {
-  background-image: url('JeffMortensen.jpg');
+  background-image: url('2016_bio_pics/JeffMortensen.jpg');
 }
 
 #king_tut {
-  background-image: url('KingTut.jpg');
+  background-image: url('2016_bio_pics/KingTut.jpg');
 }
 
 #luke_berg {
-  background-image: url('LukeBerg.jpg');
+  background-image: url('2016_bio_pics/LukeBerg.jpg');
 }
 
 #rachel_mortensen {
-  background-image: url('RachelMortensen.jpg');
+  background-image: url('2016_bio_pics/RachelMortensen.jpg');
 }
 
 #trivia_headquarters {
@@ -108,43 +112,43 @@ html {
 }
 
 #garett_arrowood {
-  background-image: url('GarettArrowood.jpg');
+  background-image: url('2016_bio_pics/GarettArrowood.jpg');
 }
 
 #dustin_polzin {
-  background-image: url('DustinPolzin.jpg');
+  background-image: url('2016_bio_pics/DustinPolzin.jpg');
 }
 
 #cassie_mckay {
-  background-image: url('CassieMcKay.jpg');
+  background-image: url('2016_bio_pics/CassieMcKay.jpg');
 }
 
 #dave_faber {
-  background-image: url('DaveFaber.jpg');
+  background-image: url('2016_bio_pics/DaveFaber.jpg');
 }
 
 #david_trautschold {
-  background-image: url('DavidTrautschold.jpg');
+  background-image: url('2016_bio_pics/DavidTrautschold.jpg');
 }
 
 #josh_chojnaski {
-  background-image: url('JoshChojnaski.jpg');
+  background-image: url('2016_bio_pics/JoshChojnaski.jpg');
 }
 
 #sorana_popa {
-  background-image: url('SoranaPopa.jpg');
+  background-image: url('2016_bio_pics/SoranaPopa.jpg');
 }
 
 #steven_hessler {
-  background-image: url('StevenHessler.jpg');
+  background-image: url('2016_bio_pics/StevenHessler.jpg');
 }
 
 #adam_gander {
-  background-image: url('AdamGander.jpg');
+  background-image: url('2016_bio_pics/AdamGander.jpg');
 }
 
 #donn_polzin {
-  background-image: url('DonnPolzin.jpg');
+  background-image: url('2016_bio_pics/DonnPolzin.jpg');
 }
 
 /*///// HISTORY TABLE /////*/
