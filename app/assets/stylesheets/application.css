@@ -52,6 +52,7 @@ html {
   min-width: 49%;
   max-width: 49%;
   height: 325px;
+  vertical-align: top;
 }
 
 #tim_mckay {
