@@ -40,19 +40,18 @@ html {
 .pic {
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 275px;
-  max-height: 275px;
+  height: 275px;
 }
 
 .bio {
-  min-height: 50px;
-  max-height: 50px;
+  height: 50px;
 }
 
 .bio-section {
   display: inline-block;
   min-width: 49%;
   max-width: 49%;
+  height: 325px;
 }
 
 #tim_mckay {
@@ -69,6 +68,42 @@ html {
 
 #adam_mckay {
   background-image: url('AdamMcKay.jpg');
+}
+
+#barb_grace {
+  background-image: url('BarbGrace.jpg');
+}
+
+#jd_grace {
+  background-image: url('JDGrace.jpg');
+}
+
+#evelyn_mckay {
+  background: url('EvelynMcKay.jpg');
+}
+
+#greg_davis {
+  background-image: url('GregDavis.jpg');
+}
+
+#jeff_mortensen {
+  background-image: url('JeffMortensen.jpg');
+}
+
+#king_tut {
+  background-image: url('KingTut.jpg');
+}
+
+#luke_berg {
+  background-image: url('LukeBerg.jpg');
+}
+
+#rachel_mortensen {
+  background-image: url('RachelMortensen.jpg');
+}
+
+#trivia_headquarters {
+  background-image: url('TriviaHeadquarters.jpg');
 }
 
 /*///// HISTORY TABLE /////*/
