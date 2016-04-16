@@ -51,7 +51,6 @@ html {
 
 .bio-section {
   display: inline-block;
-  float: left;
   min-width: 49%;
   max-width: 49%;
 }
@@ -81,6 +80,11 @@ html {
     background-image: url('BullwinkleSkinny.jpg');
     min-width: 100%;
     max-width: 100%;
+  }
+
+  .bio-section {
+    min-width: 99%;
+    max-width: 99%;
   }
 
 }
