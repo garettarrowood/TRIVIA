@@ -107,6 +107,14 @@ html {
   background-image: url('TriviaHeadquarters.jpg');
 }
 
+#garett_arrowood {
+  background-image: url('GarettArrowood.jpg');
+}
+
+#dustin_polzin {
+  background-image: url('DustinPolzin.jpg');
+}
+
 /*///// HISTORY TABLE /////*/
 
 td.outline {
