@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: localhost
+  database: trivia_development
+
+test:
+  <<: *default
+  database: trivia_test
+
+production:
+  <<: *default
+  database: trivia_production

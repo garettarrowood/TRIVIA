@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TRIVIA</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="center header">WHATSAMATTA-U</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-xs-12 center">
+        <a class="btn links" href="/">Home Page</a><br>
+        <a class="btn links" href="/team-members">Team Members</a><br>
+        <a class="btn links" href="/team-headquarters">Team Headquarters</a><br>
+        <a class="btn links" href="/team-history">Team History</a><br>
+        <a class="btn links" target="_blank" href="http://www.90fmtrivia.org">Main Trivia Page</a><br>
+      </div>
+
+      <%= yield %>
+
+    </div>
+  </div>
+
+</body>
+</html>

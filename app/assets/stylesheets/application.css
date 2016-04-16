@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require_tree ../../../vendor/assets/stylesheets/
+ */
+
+html {
+  text-align: center;
+}
+
+.header {
+  font-size: 45px;
+  font-family: "Times New Roman", Times, serif;
+  margin-bottom: 40px;
+}
+
+.bullwinkle {
+  background-image: url('BullwinkleMain.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 460px;
+  max-height: 460px;
+  min-width: 695px;
+  max-width: 695px;
+  display: inline-block;
+}
+
+/*///// PHOTOS ////*/
+
+.pic {
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 160px;
+  max-height: 160px;
+  min-width: 130px;
+  max-width: 130px;
+}
+
+#tim_mckay {
+  background-image: url('TimMcKay.jpg');
+}
+
+/*///// RESPONSIVENESS /////*/
+
+@media only screen and (max-width: 767px) {
+
+  .bullwinkle {
+    margin-top: 20px;
+    background-image: url('BullwinkleSkinny.jpg');
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+}
