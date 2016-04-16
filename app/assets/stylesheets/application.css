@@ -115,6 +115,30 @@ html {
   background-image: url('DustinPolzin.jpg');
 }
 
+#cassie_mckay {
+  background-image: url('CassieMcKay.jpg');
+}
+
+#dave_faber {
+  background-image: url('DaveFaber.jpg');
+}
+
+#david_trautschold {
+  background-image: url('DavidTrautschold.jpg');
+}
+
+#josh_chojnaski {
+  background-image: url('JoshChojnaski.jpg');
+}
+
+#sorana_popa {
+  background-image: url('SoranaPopa.jpg');
+}
+
+#steven_hessler {
+  background-image: url('StevenHessler.jpg');
+}
+
 /*///// HISTORY TABLE /////*/
 
 td.outline {
