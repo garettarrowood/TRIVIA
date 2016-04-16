@@ -8,7 +8,7 @@ class TeamMember < ActiveRecord::Base
     "Barb Grace",
     "Jeff Mortensen",
     "Rachel Mortensen",
-    "Greg Davis",
+    "Donn Polzin",
     "Luke Berg",
     "Cassie McKay",
     "Evelyn McKay",
@@ -18,7 +18,15 @@ class TeamMember < ActiveRecord::Base
     "Dave Faber",
     "Steven Hessler",
     "Sorana Popa",
+    "Greg Davis",
+    "Adam Gander",
     "David Trautschold",
     "King Tut"
   ]
+end
+
+class String
+  def to_snakecase
+    self.split(' ').map(&:downcase).join("_")
+  end
 end
