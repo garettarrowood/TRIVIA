@@ -45,8 +45,8 @@ html {
 }
 
 .bio {
-  min-height: 70px;
-  max-height: 70px;
+  min-height: 50px;
+  max-height: 50px;
 }
 
 .bio-section {
@@ -69,6 +69,27 @@ html {
 
 #adam_mckay {
   background-image: url('AdamMcKay.jpg');
+}
+
+/*///// HISTORY TABLE /////*/
+
+td.outline {
+  height: 40px;
+  padding: 5px;
+  border-style: groove;
+  border-width: medium;
+}
+
+td.history_year {
+  width: 70px;
+}
+
+td.history_name { 
+  width: 600px;
+}
+
+td.history_place {
+  width: 70px;
 }
 
 /*///// RESPONSIVENESS /////*/
