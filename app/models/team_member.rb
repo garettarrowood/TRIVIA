@@ -21,15 +21,19 @@ class TeamMember < ActiveRecord::Base
     "Greg Davis",
     "Adam Gander",
     "David Trautschold",
-    "Kyle Oksiuta",
     "Austin Konz",
-    "David Cron",
+    "David Kron",
+    "Mandy Kron",
+    "Kathy Short",
+    "Teddy Short",
+    "Kyle Oksiuta",
     "King Tut"
   ]
 
   def assign_pic
     photo_name = name.split(' ').join('')
     self.pic = "2016_bio_pics/#{photo_name}.jpg"
+    self.save!
     self
   end
 end
