@@ -3,7 +3,7 @@ class ContestController < ApplicationController
   end
 
   def team_members
-    @members = TeamMember::NAMES.map do |name|
+    @members = TeamMember::NAMES_2016.map do |name|
       TeamMember.find_or_create_by(name: name).assign_pic
     end
   end

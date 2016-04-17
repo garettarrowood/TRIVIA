@@ -1,5 +1,5 @@
 class TeamMember < ActiveRecord::Base
-  NAMES = [
+  NAMES_2016 = [
     "Tim McKay",
     "Marianne McKay",
     "Ryan McKay",
