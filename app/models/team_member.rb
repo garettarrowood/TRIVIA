@@ -22,6 +22,7 @@ class TeamMember < ActiveRecord::Base
     "Adam Gander",
     "David Trautschold",
     "Kyle Oksiuta",
+    "Austin Konz",
     "King Tut"
   ]
 end
