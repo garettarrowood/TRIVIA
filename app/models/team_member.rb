@@ -21,6 +21,7 @@ class TeamMember < ActiveRecord::Base
     "Greg Davis",
     "Adam Gander",
     "David Trautschold",
+    "Kyle Oksiuta",
     "King Tut"
   ]
 end
