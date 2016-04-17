@@ -1,6 +1,6 @@
 <% @members.each do |member| %>
   <div class="bio-section">
-    <div class="pic" id=<%= member.name.to_snakecase%>></div>
-    <div class="bio"><%= member.name %></div>
+    <img class="pic" src=<%= image_url(member.pic) %> alt=<%= member.name %>>
+    <p><%= member.name %></p>
   </div>
 <% end %>

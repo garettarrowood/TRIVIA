@@ -41,122 +41,17 @@ html {
 
 /*///// PHOTOS ////*/
 
-.pic {
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 275px;
-}
-
-.bio {
-  height: 50px;
-}
-
 .bio-section {
   display: inline-block;
   min-width: 49%;
   max-width: 49%;
   height: 325px;
+  overflow: hidden;
   vertical-align: top;
-}
-
-#tim_mckay {
-  background-image: url('2016_bio_pics/TimMcKay.jpg');
-}
-
-#marianne_mckay {
-  background-image: url('2016_bio_pics/MarianneMcKay.jpg');
-}
-
-#ryan_mckay {
-  background-image: url('2016_bio_pics/RyanMcKay.jpg');
-}
-
-#adam_mckay {
-  background-image: url('2016_bio_pics/AdamMcKay.jpg');
-}
-
-#barb_grace {
-  background-image: url('2016_bio_pics/BarbGrace.jpg');
-}
-
-#jd_grace {
-  background-image: url('2016_bio_pics/JDGrace.jpg');
-}
-
-#evelyn_mckay {
-  background-image: url('2016_bio_pics/EvelynMcKay.jpg');
-}
-
-#greg_davis {
-  background-image: url('2016_bio_pics/GregDavis.jpg');
-}
-
-#jeff_mortensen {
-  background-image: url('2016_bio_pics/JeffMortensen.jpg');
-}
-
-#king_tut {
-  background-image: url('2016_bio_pics/KingTut.jpg');
-}
-
-#luke_berg {
-  background-image: url('2016_bio_pics/LukeBerg.jpg');
-}
-
-#rachel_mortensen {
-  background-image: url('2016_bio_pics/RachelMortensen.jpg');
 }
 
 #trivia_headquarters {
   background-image: url('TriviaHeadquarters.jpg');
-}
-
-#garett_arrowood {
-  background-image: url('2016_bio_pics/GarettArrowood.jpg');
-}
-
-#dustin_polzin {
-  background-image: url('2016_bio_pics/DustinPolzin.jpg');
-}
-
-#cassie_mckay {
-  background-image: url('2016_bio_pics/CassieMcKay.jpg');
-}
-
-#dave_faber {
-  background-image: url('2016_bio_pics/DaveFaber.jpg');
-}
-
-#david_trautschold {
-  background-image: url('2016_bio_pics/DavidTrautschold.jpg');
-}
-
-#josh_chojnaski {
-  background-image: url('2016_bio_pics/JoshChojnaski.jpg');
-}
-
-#sorana_popa {
-  background-image: url('2016_bio_pics/SoranaPopa.jpg');
-}
-
-#steven_hessler {
-  background-image: url('2016_bio_pics/StevenHessler.jpg');
-}
-
-#adam_gander {
-  background-image: url('2016_bio_pics/AdamGander.jpg');
-}
-
-#donn_polzin {
-  background-image: url('2016_bio_pics/DonnPolzin.jpg');
-}
-
-#kyle_oksiuta {
-  background-image: url('2016_bio_pics/KyleOksiuta.jpg');
-}
-
-#austin_konz {
-  background-image: url('2016_bio_pics/AustinKonz.jpg');
 }
 
 

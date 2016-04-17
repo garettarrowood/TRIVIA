@@ -23,12 +23,13 @@ class TeamMember < ActiveRecord::Base
     "David Trautschold",
     "Kyle Oksiuta",
     "Austin Konz",
+    "David Cron",
     "King Tut"
   ]
-end
 
-class String
-  def to_snakecase
-    self.split(' ').map(&:downcase).join("_")
+  def assign_pic
+    photo_name = name.split(' ').join('')
+    self.pic = "2016_bio_pics/#{photo_name}.jpg"
+    self
   end
 end
