@@ -3,7 +3,7 @@ class ContestController < ApplicationController
   end
 
   def team_2016_members
-    @members = Names::FOR_2016.map do |name|
+    @members = ::Names::FOR_2016.map do |name|
       TeamMember.find_or_create_by(name: name)
     end
     @year = 2016
@@ -11,7 +11,7 @@ class ContestController < ApplicationController
   end
 
   def team_2017_members
-    @members = Names::FOR_2017.map do |name|
+    @members = ::Names::FOR_2017.map do |name|
       TeamMember.find_or_create_by(name: name)
     end
     @year = 2017
