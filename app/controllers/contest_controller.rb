@@ -1,3 +1,5 @@
+require "names"
+
 class ContestController < ApplicationController
   def index
   end
