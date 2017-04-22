@@ -6,6 +6,7 @@ class ContestController < ApplicationController
     @members = TeamMember::NAMES_2016.map do |name|
       TeamMember.find_or_create_by(name: name).assign_pic
     end
+    render "team_members"
   end
 
   def team_headquarters
