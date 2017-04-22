@@ -33,6 +33,8 @@ module Names
   FOR_2017 = [
     "Tim McKay",
     "Marianne McKay",
+    "Adam McKay",
+    "Derrick Sherer",
     "JD Grace",
     "Barb Grace",
     "Jeff Mortensen",
@@ -46,7 +48,6 @@ module Names
     "Josh Chojnaski",
     "Greg Davis",
     "Steven Hessler",
-    "Sorana Hessler",
-    "Derrick Sherer"
+    "Sorana Hessler"
   ]
 end
