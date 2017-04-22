@@ -30,5 +30,22 @@ module Names
     "King Tut"
   ]
 
-  FOR_2017 = []
+  FOR_2017 = [
+    "Tim McKay",
+    "Marianne McKay",
+    "JD Grace",
+    "Barb Grace",
+    "Jeff Mortensen",
+    "Rachel Mortensen",
+    "Donn Polzin",
+    "Matt Polzin",
+    "Alison Hangen",
+    "Dustin Polzin",
+    "Luke Berg",
+    "Garett Arrowood",
+    "Josh Chojnaski",
+    "Greg Davis",
+    "Steven Hessler",
+    "Sorana Hessler",
+  ]
 end
