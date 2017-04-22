@@ -4,14 +4,13 @@ require 'nokogiri'
 class StandingsScraper
 
   def initialize
-    triva_scores_url = 'http://www.90fmtrivia.org/TriviaScores2017/scorePages/TSK_results.html'
-    doc = RestClient.get(triva_scores_url)
+    triva_2017_scores_url = 'http://www.90fmtrivia.org/TriviaScores2017/scorePages/TSK_results.html'
+    doc = RestClient.get(triva_2017_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
 
     set_text
   rescue RestClient::NotFound => e
-    @in_text = ""
-    @tied_text = ""
+    set_blank_text
   end
 
   def self.standing
@@ -27,10 +26,20 @@ class StandingsScraper
   end
 
   def set_text
-    in_split = @parsed_doc.css("dl").children.inner_text.split("\nIn ")
-    tied_split = @parsed_doc.css("dl").children.inner_text.split("\nTied in ")
+    @in_text = split_on_in.select{|text| text.include?("WHATSAMATTA-U") }.first
+    @tied_text = split_on_tied.select{|text| text.include?("WHATSAMATTA-U") }.first
+  end
 
-    @in_text = in_split.select{|text| text.include?("WHATSAMATTA-U") }.first
-    @tied_text = tied_split.select{|text| text.include?("WHATSAMATTA-U") }.first
+  def set_blank_text
+    @in_text = ""
+    @tied_text = ""
+  end
+
+  def split_on_in
+    @parsed_doc.css("dl").children.inner_text.split("\nIn ")
+  end
+
+  def split_on_tied
+    @parsed_doc.css("dl").children.inner_text.split("\nTied in ")
   end
 end
