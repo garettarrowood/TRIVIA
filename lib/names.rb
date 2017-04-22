@@ -47,6 +47,8 @@ module Names
     "Garett Arrowood",
     "Josh Chojnaski",
     "Greg Davis",
+    "David Kron",
+    "Mandy Kron",
     "Steven Hessler",
     "Sorana Hessler",
     "David Trautschold"
