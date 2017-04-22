@@ -1,39 +1,16 @@
 class TeamMember < ActiveRecord::Base
-  NAMES_2016 = [
-    "Tim McKay",
-    "Marianne McKay",
-    "Ryan McKay",
-    "Adam McKay",
-    "JD Grace",
-    "Barb Grace",
-    "Jeff Mortensen",
-    "Rachel Mortensen",
-    "Donn Polzin",
-    "Luke Berg",
-    "Cassie McKay",
-    "Evelyn McKay",
-    "Dustin Polzin",
-    "Garett Arrowood",
-    "Josh Chojnaski",
-    "Dave Faber",
-    "Steven Hessler",
-    "Sorana Popa",
-    "Greg Davis",
-    "Adam Gander",
-    "David Trautschold",
-    "Austin Konz",
-    "David Kron",
-    "Mandy Kron",
-    "Kathy Short",
-    "Teddy Short",
-    "Kyle Oksiuta",
-    "King Tut"
-  ]
+  has_many :team_member_photos
 
-  def assign_pic
+  def get_pic(year)
+    pic = team_member_photos.find_by(year: year)
+    pic = assign_pic(year) if pic.nil?
+    pic.url
+  end
+
+private
+
+  def assign_pic(year)
     photo_name = name.split(' ').join('')
-    self.pic = "2016_bio_pics/#{photo_name}.jpg"
-    self.save!
-    self
+    team_member_photos.create(year: year, url: "#{year}_bio_pics/#{photo_name}.jpg")
   end
 end
