@@ -1,6 +1,9 @@
 require "names"
+require "standings_scraper"
 
 class ContestController < ApplicationController
+  before_action :set_standing
+
   def index
   end
 
@@ -32,6 +35,17 @@ class ContestController < ApplicationController
   def gallery
     @photos = Dir['app/assets/images/'+params[:year]+'/*'].map do |file_name|
       params[:year]+"/"+file_name.split('/')[-1]
+    end
+  end
+
+  private
+
+  def set_standing
+    result = StandingsScraper.standing
+    if result
+      @standing = "Currently in #{result}"
+    else
+      @standing = nil
     end
   end
 end
