@@ -47,5 +47,6 @@ module Names
     "Greg Davis",
     "Steven Hessler",
     "Sorana Hessler",
+    "Derrick Sherer"
   ]
 end
