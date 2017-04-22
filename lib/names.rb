@@ -48,6 +48,7 @@ module Names
     "Josh Chojnaski",
     "Greg Davis",
     "Steven Hessler",
-    "Sorana Hessler"
+    "Sorana Hessler",
+    "David Trautschold"
   ]
 end
