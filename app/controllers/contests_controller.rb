@@ -1,8 +1,6 @@
 require "names"
-require "standings_scraper"
 
-class ContestController < ApplicationController
-  before_action :set_standing
+class ContestsController < ApplicationController
 
   def index
   end
@@ -36,18 +34,5 @@ class ContestController < ApplicationController
     @photos = Dir['app/assets/images/'+params[:year]+'/*'].map do |file_name|
       params[:year]+"/"+file_name.split('/')[-1]
     end
-  end
-
-  private
-
-  def set_standing
-    if Time.now < DateTime.new(2017, 4, 24, 1) # eventually compare to db
-      result = StandingsScraper.standing
-      if result
-        @standing = "Currently in #{result}"
-      else
-        @standing = nil
-      end
-    end # else report last year's standing
   end
 end
