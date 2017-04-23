@@ -49,8 +49,9 @@ module Names
     "Greg Davis",
     "David Kron",
     "Mandy Kron",
+    "Austin Konz",
+    "David Trautschold",
     "Steven Hessler",
-    "Sorana Hessler",
-    "David Trautschold"
+    "Sorana Hessler"
   ]
 end
