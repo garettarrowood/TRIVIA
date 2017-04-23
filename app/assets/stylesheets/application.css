@@ -63,16 +63,12 @@ td.outline {
   border-width: medium;
 }
 
-td.history_year {
+td.result_stat {
   width: 70px;
 }
 
-td.history_name { 
-  width: 600px;
-}
-
-td.history_place {
-  width: 70px;
+td.team_name {
+  width: 500px;
 }
 
 /*///// RESPONSIVENESS /////*/

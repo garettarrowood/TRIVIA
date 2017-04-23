@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
 
   before_action :set_standing
 
-
   def set_standing
     if Time.now < DateTime.new(2017, 4, 24, 1) # eventually compare to db
       result = StandingsScraper.standing
