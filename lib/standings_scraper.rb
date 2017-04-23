@@ -24,11 +24,6 @@ class StandingsScraper
     @tied_text = split_on_tied.select{|text| text.include?("WHATSAMATTA-U") }.first
   end
 
-  def set_blank_text
-    @in_text = ""
-    @tied_text = ""
-  end
-
   def split_on_in
     @parsed_doc.css("dl").children.inner_text.split("\nIn ")
   end
