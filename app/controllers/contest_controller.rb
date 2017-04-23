@@ -41,11 +41,13 @@ class ContestController < ApplicationController
   private
 
   def set_standing
-    result = StandingsScraper.standing
-    if result
-      @standing = "Currently in #{result}"
-    else
-      @standing = nil
-    end
+    if Time.now < DateTime.new(2017, 4, 24, 1) # eventually compare to db
+      result = StandingsScraper.standing
+      if result
+        @standing = "Currently in #{result}"
+      else
+        @standing = nil
+      end
+    end # else report last year's standing
   end
 end
