@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
 
   def set_standing
     if Time.now < DateTime.new(2017, 4, 24, 1) # eventually compare to db
-      result = StandingsScraper.standing
-      if result
-        @standing = "Currently in #{result}"
+      results = StandingsScraper.new.current_results
+      if results
+        @standing = "As of #{results[:hour]}: #{results[:standing]}"
       else
         @standing = nil
       end

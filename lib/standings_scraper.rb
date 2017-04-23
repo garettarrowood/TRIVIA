@@ -7,14 +7,8 @@ class StandingsScraper
     triva_2017_scores_url = 'http://www.90fmtrivia.org/TriviaScores2017/scorePages/TSK_results.html'
     doc = RestClient.get(triva_2017_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
-
-    set_text
   rescue RestClient::NotFound => e
-    set_blank_text
-  end
-
-  def self.standing
-    new.standing
+    @parsed_doc = nil
   end
 
   def standing
@@ -41,5 +35,18 @@ class StandingsScraper
 
   def split_on_tied
     @parsed_doc.css("dl").children.inner_text.split("\nTied in ")
+  end
+
+  def hour
+    @parsed_doc.css("h1").text.split("Team Standings as of ")[1]
+  end
+
+  def current_results
+    if @parsed_doc
+      set_text
+      { standing: standing, hour: hour }
+    else
+      nil
+    end
   end
 end
