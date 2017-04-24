@@ -44,4 +44,21 @@ class StandingsScraper
       nil
     end
   end
+
+  def result_fields
+    set_text
+    index = @tied_text.index("WHATSAMATTA-U")
+    team_name = @tied_text[index..-1].split("\r")[0]
+    numbers = standing.split(/[a-zA-Z\s]/).delete_if{|e| e == ""}
+    place = numbers[0].gsub(",", "").to_i
+    points = numbers[1].gsub(",", "").to_i
+    year = Time.now.year
+
+    {
+      team_name: team_name,
+      place: place,
+      points: points,
+      year: year
+    }
+  end
 end

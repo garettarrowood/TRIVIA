@@ -1,8 +1,6 @@
 require "standings_scraper"
 
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   before_action :set_standing
@@ -15,6 +13,18 @@ class ApplicationController < ActionController::Base
       else
         @standing = nil
       end
-    end # else report last year's standing
+    else
+      last_contest = Contest.last_completed
+      ranking = last_contest.result&.place
+
+      if ranking
+        @standing = "Placed #{ranking.ordinalize} in Triva #{last_contest.number} - #{last_contest.theme}"
+      else
+        result = Result.create(StandingsScraper.new.result_fields.merge(contest_id: last_contest.id))
+        ranking = result.place
+      end
+
+      @standing = "Placed #{ranking.ordinalize} in Triva #{last_contest.number} - #{last_contest.theme}"
+    end
   end
 end
