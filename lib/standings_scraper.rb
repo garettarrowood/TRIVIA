@@ -3,9 +3,9 @@ require 'nokogiri'
 
 class StandingsScraper
 
-  def initialize
-    triva_2017_scores_url = 'http://www.90fmtrivia.org/TriviaScores2017/scorePages/TSK_results.html'
-    doc = RestClient.get(triva_2017_scores_url)
+  def initialize(year)
+    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{year}/scorePages/TSK_results.html"
+    doc = RestClient.get(triva_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
   rescue RestClient::NotFound => e
     @parsed_doc = nil
