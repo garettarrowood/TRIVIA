@@ -8,18 +8,12 @@ class ApplicationController < ActionController::Base
   def set_standing
     if Contest.is_going_on_now?
       results = StandingsScraper.new.current_results
-      if results
-        @standing = "As of #{results[:hour]}: #{results[:standing]}"
-      else
-        @standing = nil
-      end
+      @standing = results.present? ? "As of #{results[:hour]}: #{results[:standing]}" : nil
     else
       last_contest = Contest.last_completed
       ranking = last_contest.result&.place
 
-      if ranking
-        @standing = "Placed #{ranking.ordinalize} in Triva #{last_contest.number} - #{last_contest.theme}"
-      else
+      if !ranking.present?
         result = Result.create(StandingsScraper.new.result_fields.merge(contest_id: last_contest.id))
         ranking = result.place
       end
