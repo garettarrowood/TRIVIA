@@ -3,8 +3,8 @@ require 'nokogiri'
 
 class StandingsScraper
 
-  def initialize(year)
-    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{year}/scorePages/TSK_results.html"
+  def initialize
+    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{Time.now.year}/scorePages/TSK_results.html"
     doc = RestClient.get(triva_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
   rescue RestClient::NotFound => e
@@ -45,7 +45,7 @@ class StandingsScraper
     end
   end
 
-  def result_fields
+  def result_fields(contest_id)
     set_text
     index = @tied_text.index("WHATSAMATTA-U")
     team_name = @tied_text[index..-1].split("\n")[0]
@@ -58,7 +58,8 @@ class StandingsScraper
       team_name: team_name,
       place: place,
       points: points,
-      year: year
+      year: year,
+      contest_id: contest_id
     }
   end
 end
