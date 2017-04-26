@@ -5,13 +5,8 @@ class ContestsController < ApplicationController
   def index
   end
 
-  def team_2016_members
-    set_members(2016)
-    render "team_members"
-  end
-
-  def team_2017_members
-    set_members(2017)
+  def team_members
+    set_members(params[:year])
     render "team_members"
   end
 
