@@ -1,4 +1,8 @@
 module Names
+
+  # Could load these names directly from assets
+  # but then they would be out of order
+
   FOR_2016 = [
     "Tim McKay",
     "Marianne McKay",

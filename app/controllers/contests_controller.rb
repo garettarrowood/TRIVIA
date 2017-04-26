@@ -1,4 +1,5 @@
 require "names"
+require "gallery_photos"
 
 class ContestsController < ApplicationController
 
@@ -7,7 +8,6 @@ class ContestsController < ApplicationController
 
   def team_members
     set_members(params[:year])
-    render "team_members"
   end
 
   def team_headquarters
@@ -20,16 +20,18 @@ class ContestsController < ApplicationController
   end
 
   def gallery
-    @photos = Dir['app/assets/images/'+params[:year]+'/*'].map do |file_name|
-      params[:year]+"/"+file_name.split('/')[-1]
-    end
-    @year = params[:year]
+    set_gallery(params[:year])
   end
 
 private
 
   def set_members(year)
     @members = ::Names.for(year)
+    @year = year
+  end
+
+  def set_gallery(year)
+    @photos = ::GalleryPhotos.for(year)
     @year = year
   end
 end
