@@ -54,4 +54,10 @@ module Names
     "Steven Hessler",
     "Sorana Hessler"
   ]
+
+  def self.for(year)
+    Names.const_get("FOR_#{year}").map do |name|
+      TeamMember.find_or_create_by(name: name)
+    end
+  end
 end
