@@ -1,3 +1,5 @@
+<h2><%= @year %> Gallery</h2>
+
 <% @photos.each do |photo| %>
   <div class="margin-bottom">
     <img class="photos" src=<%= image_url(photo) %> alt="photo">

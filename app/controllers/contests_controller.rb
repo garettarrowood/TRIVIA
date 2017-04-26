@@ -23,6 +23,7 @@ class ContestsController < ApplicationController
     @photos = Dir['app/assets/images/'+params[:year]+'/*'].map do |file_name|
       params[:year]+"/"+file_name.split('/')[-1]
     end
+    @year = params[:year]
   end
 
 private
