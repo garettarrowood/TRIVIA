@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :result do
-    year 2017
+    year Time.zone.now.year
     place 30
     points 10_000
-    team_name "Whatsa 2017"
+    team_name "Whatsamatta"
     contest
   end
 end

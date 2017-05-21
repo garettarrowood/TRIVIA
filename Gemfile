@@ -17,10 +17,14 @@ gem "rest-client"
 
 group :development, :test do
   gem "rubocop", require: false
+  gem "pry"
+end
+
+group :test do
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "factory_girl_rails"
-  gem "pry"
+  gem "database_cleaner"
 end
 
 group :development do
