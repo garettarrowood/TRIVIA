@@ -55,12 +55,11 @@ class StandingsScraper
     }
   end
 
-  def index
-    @index ||= tied_text.index("WHATSAMATTA-U")
-  end
-
   def team_name
-    @team_name ||= tied_text[index..-1].split("\n")[0]
+    @team_name ||= begin
+      index = tied_text.index("WHATSAMATTA-U")
+      tied_text[index..-1].split("\n")[0]
+    end
   end
 
   def numbers
