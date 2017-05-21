@@ -1,13 +1,14 @@
-require 'rest-client'
-require 'nokogiri'
+# frozen_string_literal: true
+
+require "rest-client"
+require "nokogiri"
 
 class StandingsScraper
-
   def initialize
-    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{Time.now.year}/scorePages/TSK_results.html"
+    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{Time.zone.now.year}/scorePages/TSK_results.html"
     doc = RestClient.get(triva_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
-  rescue RestClient::NotFound => e
+  rescue RestClient::NotFound
     @parsed_doc = nil
   end
 
@@ -20,8 +21,8 @@ class StandingsScraper
   end
 
   def set_text
-    @in_text = split_on_in.select{|text| text.include?("WHATSAMATTA-U") }.first
-    @tied_text = split_on_tied.select{|text| text.include?("WHATSAMATTA-U") }.first
+    @in_text = split_on_in.select { |text| text.include?("WHATSAMATTA-U") }.first
+    @tied_text = split_on_tied.select { |text| text.include?("WHATSAMATTA-U") }.first
   end
 
   def split_on_in
@@ -40,8 +41,6 @@ class StandingsScraper
     if @parsed_doc
       set_text
       { standing: standing, hour: hour }
-    else
-      nil
     end
   end
 
@@ -49,10 +48,10 @@ class StandingsScraper
     set_text
     index = @tied_text.index("WHATSAMATTA-U")
     team_name = @tied_text[index..-1].split("\n")[0]
-    numbers = standing.split(/[a-zA-Z\s]/).delete_if{|e| e == ""}
+    numbers = standing.split(/[a-zA-Z\s]/).delete_if { |e| e == "" }
     place = numbers[0].gsub(",", "").to_i
     points = numbers[1].gsub(",", "").to_i
-    year = Time.now.year
+    year = Time.zone.now.year
 
     {
       team_name: team_name,

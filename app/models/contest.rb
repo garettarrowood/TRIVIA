@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Contest < ApplicationRecord
   has_one :result
 
@@ -7,8 +9,8 @@ class Contest < ApplicationRecord
     end
 
     def going_on_now?
-      current = find_by(year: Time.now.year)
-      Time.now.between?(current.starts_at, current.ends_at + 5.hours)
+      current = find_by(year: Time.zone.now.year)
+      Time.zone.now.between?(current.starts_at, current.ends_at + 5.hours)
     end
 
     def standings
@@ -30,5 +32,4 @@ class Contest < ApplicationRecord
       StandingsScraper.new.current_results
     end
   end
-
 end

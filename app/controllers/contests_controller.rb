@@ -1,36 +1,33 @@
+# frozen_string_literal: true
+
 require "names"
 require "gallery_photos"
 
 class ContestsController < ApplicationController
+  def index; end
 
-  def index
-  end
+  def team_headquarters; end
+
+  def team_history; end
+
+  def team_stats; end
 
   def team_members
-    set_members(params[:year])
-  end
-
-  def team_headquarters
-  end
-
-  def team_history
-  end
-
-  def team_stats
+    assign_members(params[:year])
   end
 
   def gallery
-    set_gallery(params[:year])
+    assign_gallery(params[:year])
   end
 
 private
 
-  def set_members(year)
+  def assign_members(year)
     @members = ::Names.for(year)
     @year = year
   end
 
-  def set_gallery(year)
+  def assign_gallery(year)
     @photos = ::GalleryPhotos.for(year)
     @year = year
   end

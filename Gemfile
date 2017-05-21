@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "2.3.3"
@@ -14,6 +16,7 @@ gem "rails_12factor", group: :production
 gem "rest-client"
 
 group :development, :test do
+  gem "rubocop", require: false
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "factory_girl_rails"

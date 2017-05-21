@@ -1,5 +1,6 @@
-module Names
+# frozen_string_literal: true
 
+module Names
   # Could load these names directly from assets
   # but then they would be out of order
 
@@ -32,7 +33,7 @@ module Names
     "Teddy Short",
     "Kyle Oksiuta",
     "King Tut"
-  ]
+  ].freeze
 
   FOR_2017 = [
     "Tim McKay",
@@ -57,7 +58,7 @@ module Names
     "David Trautschold",
     "Steven Hessler",
     "Sorana Hessler"
-  ]
+  ].freeze
 
   def self.for(year)
     Names.const_get("FOR_#{year}").map do |name|
