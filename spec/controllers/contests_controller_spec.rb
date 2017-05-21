@@ -14,4 +14,22 @@ describe ContestsController do
       expect(response).to render_template("index")
     end
   end
+
+  context "GET #team_headquarters" do
+    it "responds successfully and renders team_headquarters template" do
+      get :team_headquarters
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      expect(response).to render_template("team_headquarters")
+    end
+  end
+
+  context "GET #team_stats" do
+    it "responds successfully and renders team_stats template" do
+      get :team_stats
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      expect(response).to render_template("team_stats")
+    end
+  end
 end

@@ -8,8 +8,6 @@ class ContestsController < ApplicationController
 
   def team_headquarters; end
 
-  def team_history; end
-
   def team_stats; end
 
   def team_members
