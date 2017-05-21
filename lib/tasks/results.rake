@@ -61,7 +61,7 @@ namespace :results do
       },
       { year: 2004,
         place: 14,
-        team_name: "Whatsamatta-U - Audrey"s Marsh Madness",
+        team_name: "Whatsamatta-U - Audrey's Marsh Madness",
         points: 6400
       },
       { year: 2005,
@@ -76,7 +76,7 @@ namespace :results do
       },
       { year: 2007,
         place: 21,
-        team_name: "Whatsamatta-U - Knight"s of Triviality",
+        team_name: "Whatsamatta-U - Knight's of Triviality",
         points: 6355
       },
       { year: 2008,
@@ -86,7 +86,7 @@ namespace :results do
       },
       { year: 2009,
         place: 24,
-        team_name: "Whatsamatta-U - Kellogg"s Frosted Phelps",
+        team_name: "Whatsamatta-U - Kellogg's Frosted Phelps",
         points: 5800
       },
       { year: 2010,
@@ -121,7 +121,7 @@ namespace :results do
       },
       { year: 2016,
         place: 30,
-        team_name: "Whatsamatta-U - Major Tom"s Fish Frey",
+        team_name: "Whatsamatta-U - Major Tom's Fish Frey",
         points: 10500
       }
     ]
@@ -138,7 +138,7 @@ namespace :results do
         number: 24,
         starts_at: Time.zone.local(1993, 4, 16, 18),
         ends_at: Time.zone.local(1993, 4, 19, 0),
-        theme: "Trivia"s in Point"
+        theme: "Trivia's in Point"
       },
       { year: 1994,
         number: 25,
@@ -156,7 +156,7 @@ namespace :results do
         number: 27,
         starts_at: Time.zone.local(1996, 4, 12, 18),
         ends_at: Time.zone.local(1996, 4, 15, 0),
-        theme: "What a Long Strange Trip It"s Been"
+        theme: "What a Long Strange Trip It's Been"
       },
       { year: 1997,
         number: 28,
@@ -174,7 +174,7 @@ namespace :results do
         number: 30,
         starts_at: Time.zone.local(1999, 4, 16, 18),
         ends_at: Time.zone.local(1999, 4, 19, 0),
-        theme: "Trivia Like It"s 1999"
+        theme: "Trivia Like It's 1999"
       },
       { year: 2000,
         number: 31,
@@ -234,7 +234,7 @@ namespace :results do
         number: 40,
         starts_at: Time.zone.local(2009, 4, 17, 18),
         ends_at: Time.zone.local(2009, 4, 20, 0),
-        theme: "Here"s Looking At You Kid"
+        theme: "Here's Looking At You Kid"
       },
       { year: 2010,
         number: 41,
@@ -258,7 +258,7 @@ namespace :results do
         number: 44,
         starts_at: Time.zone.local(2013, 4, 19, 18),
         ends_at: Time.zone.local(2013, 4, 22),
-        theme: "That"s Not All Folks"
+        theme: "That's Not All Folks"
       },
       { year: 2014,
         number: 45,
@@ -276,7 +276,7 @@ namespace :results do
         number: 47,
         starts_at: Time.zone.local(2016, 4, 15, 18),
         ends_at: Time.zone.local(2016, 4, 18),
-        theme: "It"s Not Your Father"s Contest"
+        theme: "It's Not Your Father's Contest"
       },
       { year: 2017,
         number: 48,
