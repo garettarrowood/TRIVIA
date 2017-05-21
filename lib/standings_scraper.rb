@@ -5,7 +5,7 @@ require "nokogiri"
 
 class StandingsScraper
   def initialize
-    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{Time.zone.now.year}/scorePages/TSK_results.html"
+    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{current_year}/scorePages/TSK_results.html"
     doc = RestClient.get(triva_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
   rescue RestClient::NotFound
@@ -13,16 +13,19 @@ class StandingsScraper
   end
 
   def standing
-    if @in_text.include?("is WHATS")
-      @in_text.split(" is WHATS")[0]
+    if in_text.include?("is WHATS")
+      in_text.split(" is WHATS")[0]
     else
-      @tied_text.split(" are ")[0]
+      tied_text.split(" are ")[0]
     end
   end
 
-  def set_text
-    @in_text = split_on_in.select { |text| text.include?("WHATSAMATTA-U") }.first
-    @tied_text = split_on_tied.select { |text| text.include?("WHATSAMATTA-U") }.first
+  def in_text
+    @in_text ||= split_on_in.select { |text| text.include?("WHATSAMATTA-U") }.first
+  end
+
+  def tied_text
+    @tied_text ||= split_on_tied.select { |text| text.include?("WHATSAMATTA-U") }.first
   end
 
   def split_on_in
@@ -38,27 +41,41 @@ class StandingsScraper
   end
 
   def current_results
-    if @parsed_doc
-      set_text
-      { standing: standing, hour: hour }
-    end
+    return nil unless @parsed_doc
+    { standing: standing, hour: hour }
   end
 
   def result_fields(contest_id)
-    set_text
-    index = @tied_text.index("WHATSAMATTA-U")
-    team_name = @tied_text[index..-1].split("\n")[0]
-    numbers = standing.split(/[a-zA-Z\s]/).delete_if { |e| e == "" }
-    place = numbers[0].gsub(",", "").to_i
-    points = numbers[1].gsub(",", "").to_i
-    year = Time.zone.now.year
-
     {
       team_name: team_name,
       place: place,
       points: points,
-      year: year,
+      year: current_year,
       contest_id: contest_id
     }
+  end
+
+  def index
+    @index ||= tied_text.index("WHATSAMATTA-U")
+  end
+
+  def team_name
+    @team_name ||= tied_text[index..-1].split("\n")[0]
+  end
+
+  def numbers
+    @numbers ||= standing.split(/[a-zA-Z\s]/).delete_if { |e| e == "" }
+  end
+
+  def place
+    @place ||= numbers[0].delete(",").to_i
+  end
+
+  def points
+    @points ||= numbers[1].delete(",").to_i
+  end
+
+  def current_year
+    @current_year ||= Time.zone.now.year
   end
 end

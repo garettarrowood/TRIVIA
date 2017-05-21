@@ -4,8 +4,21 @@ class Contest < ApplicationRecord
   has_one :result
 
   class << self
-    def last_completed
-      @last_completed ||= where("DATE(ends_at) <= ?", Date.current).order(ends_at: :desc).first
+    def standings
+      going_on_now? ? current_result_banner : last_completed_banner
+    end
+
+  private
+
+    def current_result_banner
+      results = current_results
+      results.present? ? "As of #{results[:hour]}: #{results[:standing]}" : nil
+    end
+
+    def last_completed_banner
+      ranking = last_completed.result&.place
+      ranking = Result.create(result_fields).place if ranking.blank?
+      "Placed #{ranking.ordinalize} in Triva #{last_completed.number} - #{last_completed.theme}"
     end
 
     def going_on_now?
@@ -13,15 +26,8 @@ class Contest < ApplicationRecord
       Time.zone.now.between?(current.starts_at, current.ends_at + 5.hours)
     end
 
-    def standings
-      if going_on_now?
-        results = current_results
-        results.present? ? "As of #{results[:hour]}: #{results[:standing]}" : nil
-      else
-        ranking = last_completed.result&.place
-        ranking = Result.create(result_fields).place if ranking.blank?
-        "Placed #{ranking.ordinalize} in Triva #{last_completed.number} - #{last_completed.theme}"
-      end
+    def last_completed
+      @last_completed ||= where("DATE(ends_at) <= ?", Date.current).order(ends_at: :desc).first
     end
 
     def result_fields
