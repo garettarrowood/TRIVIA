@@ -3,6 +3,7 @@
 
 AllCops:
   TargetRubyVersion: 2.3
+  DisplayCopNames: true
   Exclude:
     - '**/Gemfile'
     - '**/Rakefile'
@@ -11,8 +12,15 @@ AllCops:
     - 'vendor/**/*'
     - '**/*.rake'
 
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
 Metrics/LineLength:
   Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/spec/**/*'
 
 Rails:
   Enabled: true
