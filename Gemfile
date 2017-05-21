@@ -14,7 +14,9 @@ gem 'rails_12factor'
 gem 'rest-client'
 
 group :development, :test do
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'pry'
 end
 
