@@ -3,9 +3,15 @@
 require "rails_helper"
 
 describe ContestsController do
-  let(:current_year) { Time.zone.now.year }
   let(:contest) { create(:contest) }
   let!(:result) { create(:result, contest: contest) }
+
+  let(:current_year) { Time.zone.now.year }
+  let(:current_year_params) do
+    {
+      year: current_year
+    }
+  end
 
   context "GET #index" do
     it "responds successfully and renders index template" do
@@ -35,14 +41,8 @@ describe ContestsController do
   end
 
   context "GET #team_members" do
-    let(:params) do
-      {
-        year: current_year
-      }
-    end
-
     before do
-      get :team_members, params: params
+      get :team_members, params: current_year_params
     end
 
     it "responds successfully and renders team_members template" do
@@ -54,6 +54,23 @@ describe ContestsController do
     it "assigns members and year" do
       expect(assigns(:year)).to eq current_year.to_s
       expect(assigns(:members)).to_not be_nil
+    end
+  end
+
+  context "GET #gallery" do
+    before do
+      get :gallery, params: current_year_params
+    end
+
+    it "responds successfully and renders gallery template" do
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
+      expect(response).to render_template("gallery")
+    end
+
+    it "assigns members and year" do
+      expect(assigns(:year)).to eq current_year.to_s
+      expect(assigns(:photos)).to_not be_nil
     end
   end
 end
