@@ -10,5 +10,11 @@ describe ResultsController do
       expect(response).to have_http_status(200)
       expect(response).to render_template("index")
     end
+
+    it "assigns results" do
+      get :index
+      expect(assigns(:results).length).to eq 1
+      expect(assigns(:results)).to include result
+    end
   end
 end
