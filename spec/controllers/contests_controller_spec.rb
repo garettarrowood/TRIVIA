@@ -20,6 +20,11 @@ describe ContestsController do
       expect(response).to have_http_status(200)
       expect(response).to render_template("index")
     end
+
+    it "assigns standing" do
+      get :index
+      expect(assigns(:standing)).to be_instance_of String
+    end
   end
 
   context "GET #team_headquarters" do
@@ -51,9 +56,10 @@ describe ContestsController do
       expect(response).to render_template("team_members")
     end
 
-    it "assigns members and year" do
+    it "assigns view instance variables" do
       expect(assigns(:year)).to eq current_year.to_s
       expect(assigns(:members)).to_not be_nil
+      expect(assigns(:standing)).to be_instance_of String
     end
   end
 
@@ -68,9 +74,10 @@ describe ContestsController do
       expect(response).to render_template("gallery")
     end
 
-    it "assigns members and year" do
+    it "assigns view instance variables" do
       expect(assigns(:year)).to eq current_year.to_s
       expect(assigns(:photos)).to_not be_nil
+      expect(assigns(:standing)).to be_instance_of String
     end
   end
 end
