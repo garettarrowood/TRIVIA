@@ -4,6 +4,8 @@ class Contest < ApplicationRecord
   has_one :result
 
   class << self
+    attr_accessor :last_completed
+
     def standings
       going_on_now? ? current_result_banner : last_completed_banner
     end
