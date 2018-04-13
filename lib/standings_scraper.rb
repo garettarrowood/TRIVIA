@@ -13,7 +13,9 @@ class StandingsScraper
   end
 
   def standing
-    if in_text.include?("is WHATS")
+    if !in_text
+      "No standings yet"
+    elsif in_text.include?("is WHATS")
       in_text.split(" is WHATS")[0]
     else
       tied_text.split(" are ")[0]
