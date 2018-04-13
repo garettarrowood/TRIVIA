@@ -289,6 +289,20 @@ namespace :results do
     Contest.create(past_contests)
   end
 
+  desc "Create 2018 Contest"
+  task :contest_2018 => :environment do
+    Time.zone = "Central Time (US & Canada)"
+    contest_2018 =
+      { year: 2018,
+        number: 49,
+        starts_at: Time.zone.local(2018, 4, 13, 18),
+        ends_at: Time.zone.local(2018, 4, 16),
+        theme: "Trivia Rush of 49"
+      }
+
+    Contest.create(contest_2018)
+  end
+
   desc "Attach results to Contests"
   task :affiliate_contests => :environment do
     Result.all.each do |result|

@@ -25,7 +25,7 @@ describe Contest do
     # reset class variable
     before { Contest.last_completed = nil }
 
-    it "returns string of past results" do
+    it "returns string of results from last completed contest" do
       expect(standing).to include(result.place.to_s)
       expect(standing).to include(contest.number.to_s)
       expect(standing).to include(contest.theme)
