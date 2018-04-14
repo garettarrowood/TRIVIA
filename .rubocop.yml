@@ -22,6 +22,9 @@ Metrics/BlockLength:
 Rails:
   Enabled: true
 
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
 Style/AccessModifierIndentation:
   EnforcedStyle: outdent
 
