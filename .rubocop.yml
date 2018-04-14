@@ -25,7 +25,7 @@ Rails:
 Rails/HasManyOrHasOneDependent:
   Enabled: false
 
-Style/AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
 Style/Documentation:
