@@ -4,7 +4,8 @@ require "spec_helper"
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path("../../config/environment", __FILE__)
 
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort_message = "The Rails environment is running in production mode!"
+abort(abort_message) if Rails.env.production?
 
 require "rspec/rails"
 require "factory_girl_rails"

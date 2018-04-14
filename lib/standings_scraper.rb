@@ -5,7 +5,9 @@ require "nokogiri"
 
 class StandingsScraper
   def initialize
-    triva_scores_url = "http://www.90fmtrivia.org/TriviaScores#{current_year}/scorePages/TSK_results.html"
+    triva_scores_url =
+      "http://www.90fmtrivia.org/TriviaScores" \
+      "#{current_year}/scorePages/TSK_results.html"
     doc = RestClient.get(triva_scores_url)
     @parsed_doc = Nokogiri::HTML(doc)
   rescue RestClient::NotFound
@@ -23,11 +25,13 @@ class StandingsScraper
   end
 
   def in_text
-    @in_text ||= split_on_in.select { |text| text.include?("WHATSAMATTA-U") }.first
+    @in_text ||=
+      split_on_in.select { |text| text.include?("WHATSAMATTA-U") }.first
   end
 
   def tied_text
-    @tied_text ||= split_on_tied.select { |text| text.include?("WHATSAMATTA-U") }.first
+    @tied_text ||=
+      split_on_tied.select { |text| text.include?("WHATSAMATTA-U") }.first
   end
 
   def split_on_in

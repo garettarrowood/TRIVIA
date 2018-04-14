@@ -20,7 +20,8 @@ class Contest < ApplicationRecord
     def last_completed_banner
       ranking = last_completed.result&.place
       ranking = Result.create(result_fields).place if ranking.blank?
-      "Placed #{ranking.ordinalize} in Triva #{last_completed.number} - #{last_completed.theme}"
+      "Placed #{ranking.ordinalize} in Triva " \
+      "#{last_completed.number} - #{last_completed.theme}"
     end
 
     def going_on_now?
@@ -29,7 +30,8 @@ class Contest < ApplicationRecord
     end
 
     def last_completed
-      @last_completed ||= where("DATE(ends_at) <= ?", Date.current).order(ends_at: :desc).first
+      @last_completed ||=
+        where("DATE(ends_at) <= ?", Date.current).order(ends_at: :desc).first
     end
 
     def result_fields

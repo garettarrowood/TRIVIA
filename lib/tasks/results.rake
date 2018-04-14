@@ -2,7 +2,7 @@
 
 namespace :results do
   desc "Create results - only once"
-  task :populate_db => :environment do
+  task populate_db: :environment do
     past_results = [
       { year: 1993,
         place: 264,
@@ -130,7 +130,7 @@ namespace :results do
   end
 
   desc "Create and assoc Contests"
-  task :contests => :environment do
+  task contests: :environment do
     Time.zone = "Central Time (US & Canada)"
 
     past_contests = [
@@ -290,7 +290,7 @@ namespace :results do
   end
 
   desc "Create 2018 Contest"
-  task :contest_2018 => :environment do
+  task contest_2018: :environment do
     Time.zone = "Central Time (US & Canada)"
     contest_2018 =
       { year: 2018,
@@ -304,7 +304,7 @@ namespace :results do
   end
 
   desc "Attach results to Contests"
-  task :affiliate_contests => :environment do
+  task affiliate_contests: :environment do
     Result.all.each do |result|
       contest = Contest.find_by(year: result.year)
       result.contest = contest
