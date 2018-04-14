@@ -17,6 +17,11 @@ class Contest < ApplicationRecord
       end
     end
 
+    def update_points
+      QuestionPointsScraper.new.hour_and_points
+      binding.pry
+    end
+
   private
 
     def result_banner(results)

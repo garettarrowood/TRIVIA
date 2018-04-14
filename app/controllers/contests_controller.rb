@@ -22,6 +22,11 @@ class ContestsController < ApplicationController
     @contest = Contest.find_by(year: params[:contest_id])
   end
 
+  def questions
+    Contest.update_points
+    @contest = Contest.find_by(year: params[:contest_id])
+  end
+
 private
 
   def assign_members(year)
