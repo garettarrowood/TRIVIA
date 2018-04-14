@@ -16,6 +16,7 @@ gem "rails_12factor", group: :production
 gem "rest-client"
 
 group :development, :test do
+  gem "bullet"
   gem "rubocop", require: false
   gem "pry"
 end
