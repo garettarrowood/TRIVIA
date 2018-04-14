@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TeamMember < ActiveRecord::Base
+class TeamMember < ApplicationRecord
   has_many :team_member_photos
 
   def get_pic(year)
