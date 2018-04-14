@@ -8,13 +8,18 @@ class Contest < ApplicationRecord
     attr_writer :last_completed
 
     def standings
-      going_on_now? ? current_result_banner : last_completed_banner
+      if going_on_now?
+        results = current_results
+        Hour.update_contest(current_contest, results[:hour], results[:standing])
+        result_banner(results)
+      else
+        last_completed_banner
+      end
     end
 
   private
 
-    def current_result_banner
-      results = current_results
+    def result_banner(results)
       results.present? ? "As of #{results[:hour]}: #{results[:standing]}" : nil
     end
 
@@ -26,8 +31,10 @@ class Contest < ApplicationRecord
     end
 
     def going_on_now?
-      current = find_by(year: Time.zone.now.year)
-      Time.zone.now.between?(current.starts_at, current.ends_at + 5.hours)
+      Time.zone.now.between?(
+        current_contest.starts_at,
+        current_contest.ends_at + 5.hours
+      )
     end
 
     def last_completed
@@ -41,6 +48,10 @@ class Contest < ApplicationRecord
 
     def current_results
       StandingsScraper.new.current_results
+    end
+
+    def current_contest
+      find_by(year: Time.zone.now.year)
     end
   end
 end

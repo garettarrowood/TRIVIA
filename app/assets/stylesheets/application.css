@@ -63,11 +63,15 @@ td.outline {
   border-width: medium;
 }
 
-td.result_stat {
+td.stat {
   width: 70px;
 }
 
-td.team_name {
+td.medium_stat {
+  width: 300px;
+}
+
+td.long_stat {
   width: 500px;
 }
 

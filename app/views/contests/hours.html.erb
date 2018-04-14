@@ -1,0 +1,17 @@
+<h1><%= @contest.theme %></h1>
+<h2><%= @contest.year %></h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td class="stat outline">HOUR</td>
+      <td class="medium_stat outline">CUMULATIVE POINTS</td>
+      <td class="medium_stat outline">TEAM STANDING</td>
+    </tr>
+
+    <% @contest.hours.each do |hour| %>
+      <%= render partial: "hour", locals: { hour: hour } %>
+    <% end %>
+
+  </tbody>
+</table>

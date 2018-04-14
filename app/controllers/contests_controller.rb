@@ -18,6 +18,10 @@ class ContestsController < ApplicationController
     assign_gallery(params[:year])
   end
 
+  def hours
+    @contest = Contest.find_by(year: params[:contest_id])
+  end
+
 private
 
   def assign_members(year)
