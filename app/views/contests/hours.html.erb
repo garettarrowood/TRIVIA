@@ -9,7 +9,7 @@
       <td class="medium_stat outline">TEAM STANDING</td>
     </tr>
 
-    <% @contest.hours.each do |hour| %>
+    <% @contest.hours.order(number: :asc).each do |hour| %>
       <%= render partial: "hour", locals: { hour: hour } %>
     <% end %>
 
