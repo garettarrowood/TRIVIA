@@ -10,42 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423204342) do
+ActiveRecord::Schema.define(version: 2018_04_14_153334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contests", force: :cascade do |t|
+  create_table "contests", id: :serial, force: :cascade do |t|
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.string   "theme"
-    t.integer  "year"
-    t.integer  "number"
+    t.string "theme"
+    t.integer "year"
+    t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "results", force: :cascade do |t|
-    t.integer  "year"
-    t.integer  "place"
-    t.integer  "points"
-    t.string   "team_name"
+  create_table "hours", force: :cascade do |t|
+    t.integer "number"
+    t.integer "points"
+    t.integer "contest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "contest_id"
   end
 
-  create_table "team_member_photos", force: :cascade do |t|
-    t.string   "url"
-    t.integer  "year"
-    t.integer  "team_member_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+  create_table "results", id: :serial, force: :cascade do |t|
+    t.integer "year"
+    t.integer "place"
+    t.integer "points"
+    t.string "team_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "contest_id"
   end
 
-  create_table "team_members", force: :cascade do |t|
-    t.string   "name"
-    t.text     "bio"
+  create_table "team_member_photos", id: :serial, force: :cascade do |t|
+    t.string "url"
+    t.integer "year"
+    t.integer "team_member_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "team_members", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

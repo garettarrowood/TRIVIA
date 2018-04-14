@@ -2,6 +2,7 @@
 
 class Contest < ApplicationRecord
   has_one :result
+  has_many :hours
 
   class << self
     attr_writer :last_completed
