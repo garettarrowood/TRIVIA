@@ -8,7 +8,9 @@ class ContestsController < ApplicationController
 
   def team_headquarters; end
 
-  def team_stats; end
+  def team_stats
+    @year = params[:year]
+  end
 
   def team_members
     assign_members(params[:year])
