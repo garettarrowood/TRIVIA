@@ -38,7 +38,7 @@ class Contest < ApplicationRecord
     end
 
     def last_completed
-      @last_completed ||=
+      @last_completed =
         where("DATE(ends_at) <= ?", Date.current).order(ends_at: :desc).first
     end
 
