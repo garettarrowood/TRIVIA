@@ -51,7 +51,11 @@ class Contest < ApplicationRecord
     end
 
     def current_contest
-      find_by(year: Time.zone.now.year)
+      @current_contest ||= begin
+        contest = Contest.find_by(year: Time.zone.now.year)
+        contest = Contest.find_by(year: Time.zone.now.year - 1) if contest.nil?
+        contest
+      end
     end
   end
 end

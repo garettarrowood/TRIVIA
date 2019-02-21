@@ -5,13 +5,11 @@ require "nokogiri"
 
 class StandingsScraper
   def initialize
-    triva_scores_url =
-      "http://www.90fmtrivia.org/TriviaScores" \
-      "#{current_year}/scorePages/TSK_results.html"
-    doc = RestClient.get(triva_scores_url)
+    doc = RestClient.get(triva_scores_url(current_year))
     @parsed_doc = Nokogiri::HTML(doc)
   rescue RestClient::NotFound
-    @parsed_doc = nil
+    doc = RestClient.get(triva_scores_url(last_year))
+    @parsed_doc = Nokogiri::HTML(doc)
   end
 
   def standing
@@ -82,5 +80,14 @@ class StandingsScraper
 
   def current_year
     @current_year ||= Time.zone.now.year
+  end
+
+  def last_year
+    @last_year ||= current_year - 1
+  end
+
+  def triva_scores_url(year)
+    "http://www.90fmtrivia.org/TriviaScores" \
+    "#{year}/scorePages/TSK_results.html"
   end
 end
