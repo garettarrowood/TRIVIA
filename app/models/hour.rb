@@ -12,6 +12,7 @@ class Hour < ApplicationRecord
     def update_contest(contest, hour_word, standing)
       number = get_number(hour_word)
       return if contest.hours.find_by(number: number)
+
       place = standing.split(" ")[0].to_i
       points = standing.split("with ")[1].delete(",").to_i
       create(contest: contest, number: number, place: place, points: points)

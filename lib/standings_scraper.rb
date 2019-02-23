@@ -46,6 +46,7 @@ class StandingsScraper
 
   def current_results
     return nil unless @parsed_doc
+
     { standing: standing, hour: hour }
   end
 
