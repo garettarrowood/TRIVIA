@@ -61,6 +61,9 @@ module Names
   ].freeze
 
   FOR_2018 = [].freeze
+  FOR_2019 = [].freeze
+  FOR_2020 = [].freeze
+  FOR_2021 = [].freeze
 
   def self.for(year)
     Names.const_get("FOR_#{year}").map do |name|

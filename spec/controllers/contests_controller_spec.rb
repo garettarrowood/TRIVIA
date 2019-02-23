@@ -38,7 +38,7 @@ describe ContestsController do
 
   context "GET #team_stats" do
     it "responds successfully and renders team_stats template" do
-      get :team_stats
+      get :team_stats, params: current_year_params
       expect(response).to be_success
       expect(response).to have_http_status(200)
       expect(response).to render_template("team_stats")
