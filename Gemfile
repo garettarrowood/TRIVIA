@@ -8,7 +8,6 @@ gem "coffee-rails"
 gem "jbuilder", "~> 2.0"
 gem "pg", "0.20.0"
 gem "rails", "5.2.2"
-gem "rails_12factor", group: :production
 gem "rest-client"
 gem "sass-rails", "~> 5.0"
 gem "sdoc", "~> 0.4.0", group: :doc
