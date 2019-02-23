@@ -16,7 +16,7 @@ describe ContestsController do
   context "GET #index" do
     it "responds successfully and renders index template" do
       get :index
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to have_http_status(200)
       expect(response).to render_template("index")
     end
@@ -30,7 +30,7 @@ describe ContestsController do
   context "GET #team_headquarters" do
     it "responds successfully and renders team_headquarters template" do
       get :team_headquarters
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to have_http_status(200)
       expect(response).to render_template("team_headquarters")
     end
@@ -39,7 +39,7 @@ describe ContestsController do
   context "GET #team_stats" do
     it "responds successfully and renders team_stats template" do
       get :team_stats, params: current_year_params
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to have_http_status(200)
       expect(response).to render_template("team_stats")
     end
@@ -51,7 +51,7 @@ describe ContestsController do
     end
 
     it "responds successfully and renders team_members template" do
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to have_http_status(200)
       expect(response).to render_template("team_members")
     end
@@ -69,7 +69,7 @@ describe ContestsController do
     end
 
     it "responds successfully and renders gallery template" do
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to have_http_status(200)
       expect(response).to render_template("gallery")
     end
