@@ -1,3 +1,3 @@
-== WHATSAMATTA-U TRIVIA Webpage
+# WHATSAMATTA-U TRIVIA Webpage
 
 Visit this webpage at http://whatsamatta-u.herokuapp.com
