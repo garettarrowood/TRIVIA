@@ -2,7 +2,7 @@
 
 require "rails_helper"
 
-describe Contest do
+describe Contest, type: :model do
   let(:contest) do
     create(:contest,
            number: Random.new.rand(999),
@@ -17,6 +17,11 @@ describe Contest do
 
   it "has valid factory" do
     expect(contest).to be_valid
+  end
+
+  describe "associations" do
+    it { is_expected.to have_many(:hours) }
+    it { is_expected.to have_one(:result) }
   end
 
   describe "#standings" do
