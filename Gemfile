@@ -15,7 +15,7 @@ gem "turbolinks"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
-  gem "pry"
+  gem "pry-byebug"
   gem "rubocop", require: false
 end
 
