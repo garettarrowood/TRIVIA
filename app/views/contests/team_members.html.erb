@@ -2,7 +2,7 @@
 
 <% @members.each do |member| %>
   <div class="bio-section">
-    <img class="pic" src=<%= image_url(member.get_pic(@year)) %> alt=<%= member.name %>>
+    <img class="pic" src=<%= image_url(member.get_pic(@year), skip_pipeline: true) %> alt=<%= member.name %>>
     <p><%= member.name %></p>
   </div>
 <% end %>

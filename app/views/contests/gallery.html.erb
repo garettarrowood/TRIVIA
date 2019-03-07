@@ -2,6 +2,6 @@
 
 <% @photos.each do |photo| %>
   <div class="margin-bottom">
-    <img class="photos" src=<%= image_url(photo) %> alt="photo">
+    <img class="photos" src=<%= image_url(photo, skip_pipeline: true) %> alt="photo">
   </div>
 <% end %>

@@ -13,7 +13,7 @@ class Contest < ApplicationRecord
         Hour.update_contest(current_contest, results[:hour], results[:standing])
         result_banner(results)
       else
-        last_completed_banner
+        Contest.any? ? last_completed_banner : ""
       end
     end
 
